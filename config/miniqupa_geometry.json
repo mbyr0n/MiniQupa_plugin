@@ -1,0 +1,397 @@
+{
+  "robot": "MiniQupa",
+  "revision": "ficha_geometrica_inicial",
+  "date": "2026-11-24",
+  "units": {
+    "length": "m",
+    "angles_config": "deg"
+  },
+  "sources": [
+    "Ensable MiniQupa.step",
+    "Ensable MiniQupa.obj",
+    "Ensable MiniQupa.mtl"
+  ],
+  "confirmed_by_user": {
+    "front": "IR2-IR3; +Z_CAD",
+    "upper_led_count": 5,
+    "upper_led_control": "comun_para_los_cinco",
+    "imu_in_scope": false,
+    "lower_leds_in_scope": false,
+    "photosensitive_floor_in_scope": false,
+    "communications": [
+      "simple_radios",
+      "range_and_bearing"
+    ]
+  },
+  "frames": {
+    "robot": {
+      "x": "frente",
+      "y": "izquierda",
+      "z": "arriba",
+      "origin": "punto medio de las ruedas proyectado al suelo"
+    },
+    "cad": {
+      "up": "+Y",
+      "front": "+Z",
+      "left": "+X"
+    },
+    "obj_to_cad_mm_scale": 10,
+    "obj_scale_evidence": "Diametro de neumatico OBJ=3.2; STEP=32 mm.",
+    "origin_cad_mm": [
+      0,
+      -6,
+      0
+    ],
+    "cad_mm_to_robot_m": {
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "translation_m": [
+        0,
+        0,
+        0.006
+      ],
+      "formula": [
+        "x=Z_CAD/1000",
+        "y=X_CAD/1000",
+        "z=(Y_CAD+6)/1000"
+      ]
+    }
+  },
+  "drive": {
+    "type": "differential",
+    "wheel_radius_m": 0.016,
+    "track_width_m": 0.0795,
+    "track_width_reference": "Distancia entre planos centrales de los neumaticos; parametro inicial pendiente de calibracion real.",
+    "wheels": [
+      {
+        "id": "left",
+        "position_m": [
+          -5e-05,
+          0.039749999,
+          0.015999999
+        ],
+        "axis_robot": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "id": "right",
+        "position_m": [
+          5.0001e-05,
+          -0.039749999,
+          0.016
+        ],
+        "axis_robot": [
+          0,
+          1,
+          0
+        ]
+      }
+    ]
+  },
+  "envelope": {
+    "approx_outer_diameter_m": 0.10841,
+    "approx_height_m": 0.16734,
+    "status": "envolvente_visual_no_colision_definitiva",
+    "mass_kg": null
+  },
+  "ir_sensors": [
+    {
+      "id": "IR1",
+      "hardware_index": null,
+      "position_m": [
+        -0.03737,
+        0.02103,
+        0.07045
+      ],
+      "direction": [
+        -0.866026553,
+        0.49999801,
+        0.0
+      ],
+      "yaw_deg": 150.0001,
+      "status": "aproximacion_geometrica",
+      "method": "Media de centros de envolventes de las dos lentes; normal del PCB hacia exterior."
+    },
+    {
+      "id": "IR2",
+      "hardware_index": null,
+      "position_m": [
+        0.040979,
+        0.011512,
+        0.07125
+      ],
+      "direction": [
+        0.965925867,
+        0.258818893,
+        -0.0
+      ],
+      "yaw_deg": 15.0,
+      "status": "aproximacion_geometrica",
+      "method": "Media de centros de envolventes de las dos lentes; normal del PCB hacia exterior."
+    },
+    {
+      "id": "IR3",
+      "hardware_index": null,
+      "position_m": [
+        0.041056,
+        -0.01187,
+        0.071533
+      ],
+      "direction": [
+        0.965925867,
+        -0.258818893,
+        -0.0
+      ],
+      "yaw_deg": -15.0,
+      "status": "aproximacion_geometrica",
+      "method": "Media de centros de envolventes de las dos lentes; normal del PCB hacia exterior."
+    },
+    {
+      "id": "IR4",
+      "hardware_index": null,
+      "position_m": [
+        0.027173,
+        0.033048,
+        0.07125
+      ],
+      "direction": [
+        0.6427912,
+        0.76604143,
+        0.0
+      ],
+      "yaw_deg": 49.9997,
+      "status": "aproximacion_geometrica",
+      "method": "Media de centros de envolventes de las dos lentes; normal del PCB hacia exterior."
+    },
+    {
+      "id": "IR5",
+      "hardware_index": null,
+      "position_m": [
+        -0.000821,
+        0.042521,
+        0.07125
+      ],
+      "direction": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "yaw_deg": 90.0,
+      "status": "aproximacion_geometrica",
+      "method": "Media de centros de envolventes de las dos lentes; normal del PCB hacia exterior."
+    },
+    {
+      "id": "IR6",
+      "hardware_index": null,
+      "position_m": [
+        0.026991,
+        -0.032883,
+        0.07085
+      ],
+      "direction": [
+        0.6427912,
+        -0.76604143,
+        0.0
+      ],
+      "yaw_deg": -49.9997,
+      "status": "aproximacion_geometrica",
+      "method": "Media de centros de envolventes de las dos lentes; normal del PCB hacia exterior."
+    },
+    {
+      "id": "IR7",
+      "hardware_index": null,
+      "position_m": [
+        -0.000573,
+        -0.042404,
+        0.07135
+      ],
+      "direction": [
+        -0.0,
+        -1.0,
+        -0.0
+      ],
+      "yaw_deg": -90.0,
+      "status": "aproximacion_geometrica",
+      "method": "Media de centros de envolventes de las dos lentes; normal del PCB hacia exterior."
+    },
+    {
+      "id": "IR8",
+      "hardware_index": null,
+      "position_m": [
+        -0.037242,
+        -0.020514,
+        0.07135
+      ],
+      "direction": [
+        -0.866026553,
+        -0.49999801,
+        -0.0
+      ],
+      "yaw_deg": -150.0001,
+      "status": "aproximacion_geometrica",
+      "method": "Media de centros de envolventes de las dos lentes; normal del PCB hacia exterior."
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "camara_conjunto_optico",
+      "position_m": [
+        0.00329804,
+        -0.00015106,
+        0.118118378
+      ],
+      "reference": "centro_envolvente_no_centro_optico",
+      "status": "referencia_CAD"
+    },
+    {
+      "id": "espejo",
+      "position_m": [
+        0.0,
+        -2.059e-05,
+        0.152421738
+      ],
+      "reference": "centro_envolvente_no_punto_de_vista",
+      "status": "referencia_CAD"
+    },
+    {
+      "id": "modulo_sensor_color",
+      "position_m": [
+        0.010786369,
+        -3.81e-06,
+        0.0070745
+      ],
+      "reference": "centro_envolvente_placa",
+      "status": "referencia_CAD"
+    },
+    {
+      "id": "chip_inferior_candidato_rgb",
+      "position_m": [
+        0.0109246,
+        -0.00039708,
+        0.0059215
+      ],
+      "reference": "identificacion_por_geometria_pendiente",
+      "status": "referencia_CAD"
+    },
+    {
+      "id": "difusor_superior",
+      "position_m": [
+        0.0,
+        0.0,
+        0.119227301
+      ],
+      "reference": "centro_envolvente",
+      "status": "referencia_CAD"
+    },
+    {
+      "id": "placa_superior",
+      "position_m": [
+        0.0,
+        0.0,
+        0.159843479
+      ],
+      "reference": "centro_envolvente_sin_tag_codificado",
+      "status": "referencia_CAD"
+    }
+  ],
+  "upper_leds": {
+    "count": 5,
+    "control": "common",
+    "positions_m": null,
+    "note": "Difusor identificado; ubicacion individual de emisores no confirmada. No distribuir uniformemente sin evidencia."
+  },
+  "camera": {
+    "type": "omnidirectional_blob_detection",
+    "physical_lens_top_reference_robot_m": [
+      -0.00018442,
+      -0.00015106,
+      0.12523038
+    ],
+    "virtual_viewpoint_m": null,
+    "aperture_deg": null,
+    "range_m": null,
+    "note": "Punto superior de lente no equivale al centro optico ni al punto de vista efectivo del espejo."
+  },
+  "floor_rgb": {
+    "enabled": true,
+    "direction_robot": [
+      0,
+      0,
+      -1
+    ],
+    "optical_origin_m": null,
+    "note": "Modulo TCS34725 identificado. Simulacion usa centro de placa como referencia provisional; origen optico activo exacto pendiente. No modela cuentas RGBC ni iluminacion.",
+    "simulation_reference_landmark": "modulo_sensor_color",
+    "simulation_model": "ideal_rgb_point_sample_2d"
+  },
+  "apriltag": {
+    "role": "marcador_observable_desde_dron",
+    "detector_in_scope": false,
+    "family": null,
+    "id": null,
+    "side_length_m": null,
+    "pose_robot": null,
+    "simulation_position_m": [
+      0,
+      0,
+      0.1676
+    ],
+    "simulation_side_length_m": 0.06,
+    "simulation_payload": "numeric tag_id per robot",
+    "simulation_visual": "ID-dependent illustrative pattern, not an AprilTag family",
+    "mounting_note": "Top CAD plate group 250 is 80x80 mm, top z=0.16734347 m. Tag plane z=0.1676 exceeds both CAD and conservative collision top 0.16735 m. 60 mm black square plus white margin is 75 mm total."
+  },
+  "communications": {
+    "simple_radios": {
+      "range_m": null,
+      "anchor_robot_m": null,
+      "simulation_range_m": 1.0,
+      "simulation_anchor_robot_m": [
+        0,
+        0,
+        0
+      ],
+      "note": "Alcance inicial de simulacion confirmado por usuario: 1 m. Posicion virtual en origen del robot, no antena medida. Configuracion efectiva por atributos XML radio_medium/radio_range/radio_position; valores fisicos siguen pendientes."
+    },
+    "range_and_bearing": {
+      "range_m": null,
+      "data_size_bytes": 10,
+      "anchor_robot_m": null,
+      "simulation_range_m": 3.0,
+      "simulation_anchor_robot_m": [
+        0,
+        0,
+        0.1
+      ],
+      "note": "Modelo nativo ARGoS con defaults del foot-bot: 3 m y 10 bytes. Referencia virtual a 0.1 m, no ubicacion fisica de hardware. Configuracion efectiva por XML rab_range/rab_data_size/rab_position y medium del sensor."
+    }
+  },
+  "pending": [
+    "Numeracion IR del firmware",
+    "Posiciones individuales de cinco LEDs",
+    "Origen optico RGB",
+    "Punto de vista y apertura omnidireccionales",
+    "Alcances y respuesta IR",
+    "Rangos y anclajes de comunicacion",
+    "Masa y parametros fisicos",
+    "Familia, ID, tamano y pose de AprilTag"
+  ]
+}

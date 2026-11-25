@@ -1,0 +1,50 @@
+<argos-configuration>
+  <framework>
+    <system threads="0" />
+    <experiment length="5" ticks_per_second="20" random_seed="1" />
+  </framework>
+  <controllers>
+    <lua_controller id="smoke" library="libargos3plugin_simulator_miniqupa">
+      <actuators>
+        <differential_steering implementation="default" />
+        <simple_radios implementation="default" />
+        <range_and_bearing implementation="default" />
+        <miniqupa_diffuser implementation="default" medium="leds" />
+      </actuators>
+      <sensors>
+        <miniqupa_ir implementation="default" />
+        <miniqupa_encoder implementation="default" />
+        <miniqupa_floor_color implementation="default" />
+        <simple_radios implementation="default" />
+        <miniqupa_camera implementation="default" medium="leds" />
+        <range_and_bearing implementation="medium" medium="rab" />
+      </sensors>
+      <params script="examples/demo.lua" />
+    </lua_controller>
+  </controllers>
+  <arena size="1,1,.5" center="0,0,.25">
+    <floor id="floor" source="loop_functions" pixels_per_meter="100" />
+    <miniqupa id="mq0" radio_medium="radios" tag_id="7" radio_range="1" rab_range="3" rab_data_size="10">
+      <body position="0,0,0" orientation="0,0,0" />
+      <controller config="smoke" />
+    </miniqupa>
+  </arena>
+  <physics_engines>
+    <dynamics2d id="dyn2d" iterations="10" />
+  </physics_engines>
+  <media>
+    <tag id="tags" grid_size="10,10,5" />
+    <led id="leds" grid_size="10,10,5" />
+    <simple_radio id="radios" grid_size="10,10,5" />
+    <range_and_bearing id="rab" grid_size="10,10,5" />
+  </media>
+  <visualization>
+    <qt-opengl autoplay="true">
+      <camera>
+        <placements>
+          <placement index="0" position=".25,-.3,.4" look_at="0,0,.08" up="0,0,1" lens_focal_length="28" />
+        </placements>
+      </camera>
+    </qt-opengl>
+  </visualization>
+</argos-configuration>
