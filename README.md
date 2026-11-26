@@ -4,6 +4,10 @@ Plugin de simulación de un robot diferencial MiniQupa, con geometría visual de
 
 El repositorio contiene el plugin y un ejemplo mínimo. No necesitas el workspace utilizado durante su desarrollo ni los archivos CAD originales para compilarlo o ejecutarlo.
 
+## Manual de programación
+
+El [manual completo](docs/README.md) explica cada dispositivo en Lua y C++, sus unidades, configuración XML y límites. Incluye ejemplos ejecutables de obstáculos, comunicación entre dos robots y un controlador C++ compilable. Empieza por [tu primer controlador](docs/01-primer-controlador.md).
+
 ## Contenido
 
 - [Requisitos](#requisitos)
@@ -195,7 +199,8 @@ Ejecuta con el entorno de bibliotecas de esa misma compilación ARGoS. Mezclar p
 │   └── models/               # OBJ, MTL y registro de preparación
 ├── config/                   # Geometría derivada del CAD
 ├── cmake/                    # Generadores de headers geométricos
-└── examples/                 # Escenario y controlador Lua mínimos
+├── docs/                     # Manual de programación por dispositivo
+└── examples/                 # Escenarios Lua y controlador C++
 ```
 
 ## Límites del modelo
